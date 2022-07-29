@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "regs_lpc176x.h": "c"
+        "regs_lpc176x.h": "c",
+        "funciones.h": "c"
     }
 }
