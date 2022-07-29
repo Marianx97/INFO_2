@@ -1,0 +1,5 @@
+{
+    "files.associations": {
+        "regs_lpc176x.h": "c"
+    }
+}
