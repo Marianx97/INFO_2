@@ -241,6 +241,10 @@ typedef struct
 #define		ST_CLKSOURCE		2
 #define		ST_COUNTFLAG		16
 
+// Suponiendo (systick clk = 100MGHz)
+// RELOAD_VAL = (systick clk / 100) - 1 = 999999|_10 = 0xF423F|_16
+#define		RELOAD_VAL			0xF423F
+
 //!< ///////////////////   TIMERS   /////////////////////////////
 //!< 0x40004000UL : Dirección de inicio de los registros del Timer0
 #define		TIMER0		( ( registro  * ) 0x40004000UL )
@@ -309,6 +313,7 @@ typedef struct
 #define		T3CR1		TIMER3[12]
 //!< EMR y CTCR no han sido definidos. (no están en posiciones contiguas)
 
+typedef		uint32_t	timer_t;
 
 //!< ///////////////////   NVIC   //////////////////////////
 //!< Nested Vectored Interrupt Controller (NVIC)

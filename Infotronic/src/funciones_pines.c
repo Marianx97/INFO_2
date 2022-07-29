@@ -1,10 +1,4 @@
-#include "inc/Regs_LPC176x.h"
-void setPinSel(uint8_t port, uint8_t pin, uint8_t mode);
-void SetDir(uint8_t port, uint8_t pin, uint8_t type);
-void SetPinMode(uint8_t port, uint8_t pin, uint8_t mode);
-void setPinModeOD(uint8_t port, uint8_t pin, uint8_t mode);
-void setPin(uint8_t port, uint8_t pin, uint8_t value);
-uint8_t getPin(uint8_t port, uint8_t pin);
+#include "inc/funciones.h"
 
 /*
     Determina el modo de configuración de un pin de un puerto.
