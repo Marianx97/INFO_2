@@ -87,6 +87,10 @@ typedef 	__RW uint32_t 		registro; //!< defino un tipo 'registro' (volatile uint
 #define		GPIO_OUT_NORMAL	0
 #define		GPIO_OUT_OD		1
 
+#define PINSEL_FUNC1   0x01
+#define PINSEL_FUNC2   0x02
+#define PINSEL_FUNC3   0x03
+
 /*	*			*
 	*************************
 	*	FIODIR		*	0x2009C000
@@ -433,6 +437,10 @@ typedef		uint32_t	timer_t;
 #define		U0THRE		((U0LSR & LSR_THRE) >> 5)
 #define		U1RDR		(U1LSR & LSR_RDR)
 #define		U1THRE		((U1LSR & LSR_THRE) >> 5)
+
+// UART BUFFERS
+#define		UART_TX_BUFF_SIZE	10
+#define		UART_RX_BUFF_SIZE	10
 
 //!< ///////////////////   DAC /////////////////////////////
 //!< 0x4008C000UL : Registro de conversion del DAC:

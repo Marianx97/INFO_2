@@ -20,10 +20,9 @@ void sysTickInit (void);
 void sysTickHandler (void);
 
 
-// *****************************************************
-//          Funciones para manejar timers
-// *****************************************************
-
+// ******************************************************************
+//          Definiciones, variables y funciones para manejar timers
+// ******************************************************************
 
 /* Definiciones */
 #define N_TIMERS     32
@@ -59,3 +58,22 @@ void timerChangeState(uint8_t event , uint8_t new_state);
 void timerStop(uint8_t event);
 void timerClose(uint8_t event);
 void timerCloseAll(void);
+
+// *******************************************************************
+//          Definiciones, variables y funciones para manejar la UART
+// *******************************************************************
+
+extern volatile uint8_t TxStart;
+extern volatile uint8_t bufferRx[UART_RX_BUFF_SIZE];
+extern volatile uint8_t indexRxIN;
+extern volatile uint8_t indexRxOUT;
+extern volatile uint8_t indexTxIN;
+extern volatile uint8_t indexTxOUT;
+extern volatile uint8_t bufferTx[UART_TX_BUFF_SIZE];
+
+void initUART0(void);
+void UART0_IRQHandler(void);
+void pushRx(uint8_t dato);
+uint8_t popTx(void);
+void pushTx(uint8_t dato);
+uint8_t popRx(void);
