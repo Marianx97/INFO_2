@@ -137,3 +137,25 @@ extern volatile uint8_t keyBuffer;
 uint8_t getKey(void);
 uint8_t keyboardHW(void);
 void keyboardSW(void);
+
+
+// *******************************************************************
+//          Definiciones, variables y funciones para manejar ADC y DAC
+// *******************************************************************
+
+/* Definiciones */
+
+#define MAX_SAMPLE_AMOUNT   10
+#define DAC_OUT P0,26
+
+/* Variables globales */
+
+extern volatile uint16_t sampleBuffer[MAX_SAMPLE_AMOUNT];
+extern volatile uint16_t lastFilteredSample = 0;
+
+/* Funciones */
+
+void initADC (void);
+void ADC_IRQHandler (void);
+void initDAC(void);
+void setDAC(uint16_t value);
